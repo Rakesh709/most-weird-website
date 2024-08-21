@@ -1,0 +1,24 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* digital clock  */
+#title {
+    color: white;
+    display: flex;
+    padding-left: 100px;
+}
+
+  #ist-clock {
+    font-size: 40px;
+    background-color: orange;
+    padding: 20px 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: grid;
+    display: inline-block;
+  }

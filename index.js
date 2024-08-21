@@ -20,6 +20,18 @@ body.appendChild(divInfo)
 // })
 // console.log(inputfieldEntry);
 
+//+++++++++++++++++ CLOCK ++++++++++++++++++++++++++++++++
+
+const istClock = document.getElementById("ist-clock")
+
+setInterval(function(){
+    const data = new Date();
+    istClock.innerHTML = data.toLocaleTimeString()
+},1000)
+
+
+
+
 function checkInput(){
     let input = document.getElementById("center-input").value;
     if(!NaN  && input.trim()!== ''){
