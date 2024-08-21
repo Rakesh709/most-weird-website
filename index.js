@@ -25,8 +25,23 @@ body.appendChild(divInfo)
 const istClock = document.getElementById("ist-clock")
 
 setInterval(function(){
-    const data = new Date();
-    istClock.innerHTML = data.toLocaleTimeString()
+    const date = new Date();
+    istClock.innerHTML = date.toLocaleTimeString()
+},1000)
+
+
+const ustClock = document.getElementById("UST-clock")
+
+setInterval(function(){
+    const date = new Date();
+    ustClock.innerHTML= date.toLocaleTimeString("en-US", {timeZone: "America/New_York"})
+},1000)
+
+const bstClock = document.getElementById("BST-clock")
+
+setInterval(function(){
+    const date = new Date();
+    bstClock.innerHTML= date.toLocaleTimeString("en-US", {timeZone: "Europe/London"})
 },1000)
 
 

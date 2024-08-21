@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>most-weird-website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="background-color: #313131">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: #313131">
     <div id="body">
-        <h1 style="background-color: bisque; text-align: center;">Most-weird-website</h1>
+      <h1 style="background-color: bisque; text-align: center">
+        Most-weird-website
+      </h1>
     </div>
     <!-- //CLOCK -->
-    <div id="IST">
+    <div id="digital-clock">
+      <div id="IST">
         <span id="title">IST clock</span>
         <div id="ist-clock"></div>
+      </div>
+      <div id="UST">
+        <span id="ust-title">America-New_York</span>
+        <div id="UST-clock"></div>
+      </div>
+      <div id="BST">
+        <span id="bst-title">Europe-London</span>
+        <div id="BST-clock"></div>
+      </div>
     </div>
-    <div >
-        <input id="center-input"  type="text">
-        <input type="submit" value="check text" onclick="checkInput()">
+    <div>
+      <input id="center-input" type="text" />
+      <input type="submit" value="check text" onclick="checkInput()" />
     </div>
-       
-</body>
-    <script src="index.js"></script>
+  </body>
+  <script src="index.js"></script>
 </html>
