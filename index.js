@@ -59,7 +59,7 @@ const button = document.querySelectorAll(".button");
 
 const colourBody = document.querySelector(".canvas");
 
-console.log(colourBody);
+//console.log(colourBody);
 
 button.forEach(function (button) {
   //console.log(button)
@@ -79,3 +79,14 @@ button.forEach(function (button) {
     }
   });
 });
+
+
+// creation
+
+document.querySelector("#creation").addEventListener("click",function(e){
+  console.log(e.target)
+        const date = new Date();
+        document.querySelector("#creation").innerHTML= date.toLocaleDateString()
+        document.querySelector("#creation").style.backgroundColor="red"
+})
+
