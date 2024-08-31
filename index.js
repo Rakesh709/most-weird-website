@@ -1,3 +1,5 @@
+
+
 const divInfo = document.createElement("div");
 divInfo.setAttribute("title", "titleinfo");
 divInfo.className = "div-info";
@@ -87,6 +89,20 @@ document.querySelector("#creation").addEventListener("click",function(e){
   console.log(e.target)
         const date = new Date();
         document.querySelector("#creation").innerHTML= date.toLocaleDateString()
-        document.querySelector("#creation").style.backgroundColor="red"
+        document.querySelector("#creation").style.backgroundColor="green"
+        
+        
 })
+
+
+//multiplication table 
+const form =document.querySelector('form')
+
+form.addEventListener("click",function(e){
+  e.preventDefault();
+  let num = document.getElementById('tableInput').value
+  console.log(`number is ${num}`);
+  
+})
+
 
