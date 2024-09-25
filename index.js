@@ -11,12 +11,6 @@ body.appendChild(divInfo);
 // console.log(divInfo);
 // console.log(document.body);
 
-//++++++++++++++++++++++++++++++ input field +++++++++++++++++++++++++++++++++++++++++
-
-// let inputfieldEntry = document.getElementById("center-input").addEventListener('click',function(e){
-//     console.log("something entered")
-// })
-// console.log(inputfieldEntry);
 
 //+++++++++++++++++ CLOCK ++++++++++++++++++++++++++++++++
 
@@ -45,14 +39,6 @@ setInterval(function () {
   });
 }, 1000);
 
-function checkInput() {
-  let input = document.getElementById("center-input").value;
-  if (!NaN && input.trim() !== "") {
-    alert(`input is ${input} is the number`);
-  } else {
-    alert("this is string");
-  }
-}
 
 // colour picker
 
@@ -70,7 +56,7 @@ button.forEach(function (button) {
     if (e.target.id === "grey") {
       colourBody.style.backgroundColor = e.target.id;
     }
-    if (e.target.id === "white") {
+    if (e.target.id === "lightgreen") {
       colourBody.style.backgroundColor = e.target.id;
     }
     if (e.target.id === "blue") {
@@ -89,20 +75,56 @@ document.querySelector("#creation").addEventListener("click",function(e){
   console.log(e.target)
         const date = new Date();
         document.querySelector("#creation").innerHTML= date.toLocaleDateString()
-        document.querySelector("#creation").style.backgroundColor="green"
+        document.querySelector("#creation").style.backgroundColor="lightgreen"
         
         
 })
 
 
-//multiplication table 
-const form =document.querySelector('form')
 
-form.addEventListener("click",function(e){
-  e.preventDefault();
-  let num = document.getElementById('tableInput').value
-  console.log(`number is ${num}`);
+//datatype check 
+
+let datatypeValue= document.querySelector(".datatypeHolder")
+let checkValue = document.querySelector(".check")
+
+function checkDataType(value){
+  console.log("value is", value);
+
+  if (value.trim() === "") {
+    document.querySelector(".finalValue").innerHTML = "It's UNDEFINED";
+    return;
+  }
+
+  let parseValue;
   
+  //to handle boolean value
+  if(value ==='true' || value ==="false"){
+    parseValue = (value ==='true');
+  }else if(!isNaN(value)) {
+    parseValue = Number(value);
+  }else{
+    parseValue = value;
+  }
+
+  let dataType = typeof parseValue
+  console.log(dataType)
+
+  if(dataType ==="number"){
+    document.querySelector(".finalValue").innerHTML = "Its Number"
+  }else if(dataType === "string"){
+    document.querySelector(".finalValue").innerHTML = "Its String"
+  }else if(dataType === "boolean"){
+    document.querySelector(".finalValue").innerHTML = "Its Boolean"
+  }else{
+    document.querySelector(".finalValue").innerHTML = "something wrong !"
+  }
+
+
+
+
+}
+
+
+checkValue.addEventListener("click",()=>{
+  checkDataType(datatypeValue.value)
 })
-
-

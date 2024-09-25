@@ -33,27 +33,28 @@
     </h1>
     <div class="canvas">
       <span class="button" id="grey">Grey</span>
-      <span class="button" id="white">White</span>
+      <span class="button" id="lightgreen">Green</span>
       <span class="button" id="blue">Blue</span>
       <span class="button" id="yellow">Yellow</span>
     </div>
     <div id="creation">
       <!-- <h1>creation </h1> -->
+      <span class="click">Click me</span>
     </div>
 
-    <!-- multiplication table -->
-    <form>
-      <div id="table">
-        <h1 id="tableHeading" style="color: aliceblue">
-          Table of <span></span>
-        </h1>
-
-        <p>
-          <label style="color: aliceblue">Table: </label
-          ><input type="tableId" id="tableInput" />
-        </p>
+    <!-- datatype checker -->
+    <div class="container">
+      <h1 class="heading">DataType checker </h1>
+      <div class="datatype">
+        <input
+          type="text"
+          class="datatypeHolder"
+          placeholder="Enter any datatype"
+        />
+        <button class="check">Check</button>
+        <p class="finalValue"></p>
       </div>
-    </form>
+    </div>
   </body>
 
   <script src="index.js"></script>

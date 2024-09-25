@@ -95,8 +95,8 @@ body {
     background: grey;
   }
   
-  #white {
-    background: white;
+  #lightgreen {
+    background: lightgreen;
   }
   #blue {
     background: blue;
@@ -108,5 +108,43 @@ body {
 
   #creation{
     background-color: beige;
-    height: 100px;
+    height: 50px;
+  }
+.click{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container{
+    height: 20vh;
+    background-color: azure;
+    margin-top: 30px;
+    
+}
+.heading{
+  display: flex;
+    justify-content: center;
+}
+  .datatype{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .finalValue{
+    margin-left: 20px;
+  }
+
+  .datatypeHolder {
+    border-radius: 5px;
+    height: 5vh;
+  }
+
+  .check{
+    border-radius: 5px;
+    height: 5vh;
+    margin-left: 5px;
+    
   }
