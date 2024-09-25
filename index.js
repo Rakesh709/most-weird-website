@@ -73,9 +73,35 @@ button.forEach(function (button) {
 
 document.querySelector("#creation").addEventListener("click",function(e){
   console.log(e.target)
-        const date = new Date();
-        document.querySelector("#creation").innerHTML= date.toLocaleDateString()
-        document.querySelector("#creation").style.backgroundColor="lightgreen"
+  let shortThoughts = [
+    "What is the purpose of dreams?",
+    "Do we all see colors the same way?",
+    "Is free will an illusion?",
+    "Can time exist without change?",
+    "What defines true happiness?",
+    "Is reality subjective or objective?",
+    "Do we have a soul, or are we just biology?",
+    "Can something come from nothing?",
+    "What if the universe is alive?",
+    "Does consciousness exist outside the brain?",
+    "Can technology ever replace human emotion?",
+    "What if deja vu is a glitch in reality?",
+    "Is math a human invention or a discovery?",
+    "Why do we fear the unknown?",
+    "Are we living in a multiverse?",
+    "What if space and time are the same thing?",
+    "Does language shape our thoughts?",
+    "Is it possible to truly know another person?",
+    "Could immortality be a curse rather than a blessing?",
+    "What if reality is just a shared dream?"
+  ];
+
+        let text=document.querySelector("#creation").innerHTML= shortThoughts[Math.floor(Math.random() * 20) + 1]
+        document.querySelector("#creation").style.backgroundColor="grey"
+        document.querySelector("#creation").style.color = "white"; 
+        document.querySelector("#creation").style.fontSize = "24px";
+        document.querySelector("#creation").style.textAlign="center"
+        
         
         
 })
