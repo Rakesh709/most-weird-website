@@ -167,7 +167,9 @@ async function getFakeData() {
       <img src="${picture}" alt="User Picture" />
     `;
   } catch (error) {
-    console.log("Some error occured");
+    let dataContainerError = document.getElementById("apiData");
+    dataContainerError.innerHTML=`<p style="color:red;">An error occurred : Try Agian !</p>`;
+    
   }
 }
 
