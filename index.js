@@ -1,5 +1,3 @@
-
-
 const divInfo = document.createElement("div");
 divInfo.setAttribute("title", "titleinfo");
 divInfo.className = "div-info";
@@ -10,7 +8,6 @@ divInfo.innerHTML = "Rakesh Website";
 body.appendChild(divInfo);
 // console.log(divInfo);
 // console.log(document.body);
-
 
 //+++++++++++++++++ CLOCK ++++++++++++++++++++++++++++++++
 
@@ -38,7 +35,6 @@ setInterval(function () {
     timeZone: "Europe/London",
   });
 }, 1000);
-
 
 // colour picker
 
@@ -68,11 +64,10 @@ button.forEach(function (button) {
   });
 });
 
-
 // creation
 
-document.querySelector("#creation").addEventListener("click",function(e){
-  console.log(e.target)
+document.querySelector("#creation").addEventListener("click", function (e) {
+  console.log(e.target);
   let shortThoughts = [
     "What is the purpose of dreams?",
     "Do we all see colors the same way?",
@@ -93,27 +88,23 @@ document.querySelector("#creation").addEventListener("click",function(e){
     "Does language shape our thoughts?",
     "Is it possible to truly know another person?",
     "Could immortality be a curse rather than a blessing?",
-    "What if reality is just a shared dream?"
+    "What if reality is just a shared dream?",
   ];
 
-        let text=document.querySelector("#creation").innerHTML= shortThoughts[Math.floor(Math.random() * 20) + 1]
-        document.querySelector("#creation").style.backgroundColor="grey"
-        document.querySelector("#creation").style.color = "white"; 
-        document.querySelector("#creation").style.fontSize = "24px";
-        document.querySelector("#creation").style.textAlign="center"
-        
-        
-        
-})
+  let text = (document.querySelector("#creation").innerHTML =
+    shortThoughts[Math.floor(Math.random() * 20) + 1]);
+  document.querySelector("#creation").style.backgroundColor = "grey";
+  document.querySelector("#creation").style.color = "white";
+  document.querySelector("#creation").style.fontSize = "24px";
+  document.querySelector("#creation").style.textAlign = "center";
+});
 
+//datatype check
 
+let datatypeValue = document.querySelector(".datatypeHolder");
+let checkValue = document.querySelector(".check");
 
-//datatype check 
-
-let datatypeValue= document.querySelector(".datatypeHolder")
-let checkValue = document.querySelector(".check")
-
-function checkDataType(value){
+function checkDataType(value) {
   console.log("value is", value);
 
   if (value.trim() === "") {
@@ -122,35 +113,62 @@ function checkDataType(value){
   }
 
   let parseValue;
-  
+
   //to handle boolean value
-  if(value ==='true' || value ==="false"){
-    parseValue = (value ==='true');
-  }else if(!isNaN(value)) {
+  if (value === "true" || value === "false") {
+    parseValue = value === "true";
+  } else if (!isNaN(value)) {
     parseValue = Number(value);
-  }else{
+  } else {
     parseValue = value;
   }
 
-  let dataType = typeof parseValue
-  console.log(dataType)
+  let dataType = typeof parseValue;
+  console.log(dataType);
 
-  if(dataType ==="number"){
-    document.querySelector(".finalValue").innerHTML = "Its Number"
-  }else if(dataType === "string"){
-    document.querySelector(".finalValue").innerHTML = "Its String"
-  }else if(dataType === "boolean"){
-    document.querySelector(".finalValue").innerHTML = "Its Boolean"
-  }else{
-    document.querySelector(".finalValue").innerHTML = "something wrong !"
+  if (dataType === "number") {
+    document.querySelector(".finalValue").innerHTML = "Its Number";
+  } else if (dataType === "string") {
+    document.querySelector(".finalValue").innerHTML = "Its String";
+  } else if (dataType === "boolean") {
+    document.querySelector(".finalValue").innerHTML = "Its Boolean";
+  } else {
+    document.querySelector(".finalValue").innerHTML = "something wrong !";
   }
-
-
-
-
 }
 
+checkValue.addEventListener("click", () => {
+  checkDataType(datatypeValue.value);
+});
 
-checkValue.addEventListener("click",()=>{
-  checkDataType(datatypeValue.value)
-})
+// fake datagenerater
+
+let genButton = document.getElementById("genButton");
+
+async function getFakeData() {
+  try {
+    const resp = await fetch("https://randomuser.me/api/");
+
+    const data = await resp.json();
+
+    const results = data.results[0];
+
+    const fullName = `${results.name.title} ${results.name.first} ${results.name.last}`;
+    const age = results.dob.age;
+
+    const email = results.email;
+    const picture = results.picture.large;
+
+    let dataContainer = document.getElementById("apiData");
+    dataContainer.innerHTML = `
+      <p><strong>Name:</strong> ${fullName}</p>
+      <p><strong>Age:</strong> ${age} years</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <img src="${picture}" alt="User Picture" />
+    `;
+  } catch (error) {
+    console.log("Some error occured");
+  }
+}
+
+genButton.addEventListener("click", getFakeData);

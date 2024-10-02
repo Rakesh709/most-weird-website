@@ -148,3 +148,37 @@ body {
     margin-left: 5px;
     
   }
+
+  /* data generater  */
+
+
+  .dataContainer{
+    height: 20vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #genButton{
+    border: 0;
+    outline: 0;
+    background: #019f55;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    display: flex;
+    align-items:center;
+    justify-content:  center;
+    padding: 16px 26px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dataContainer h1{
+    color: #fff;
+  }
+
+  #apiData{
+    color: #fff;
+  }
